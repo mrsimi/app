@@ -1,0 +1,12 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<p>
+    @Model.Question
+</p>
+<a asp-page="Index" asp-page-handler="OnNext" class="btn">
+    Next
+</a>

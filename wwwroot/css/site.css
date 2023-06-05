@@ -1,0 +1,25 @@
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered-div {
+  text-align: center;
+  background-color: whitesmoke;
+  padding: 50px;
+}
+
+.btn{
+  text-decoration: none;
+  background-color: gold;
+  padding: 5px 10px;
+}
