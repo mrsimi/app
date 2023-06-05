@@ -74,7 +74,7 @@ public class IndexModel : PageModel
     public string Question { get; set; }
     public void OnGet()
     {
-        HttpContext.Session.SetInt32(QuestionCount, 2);
+        HttpContext.Session.SetInt32(QuestionCount, 20);
         HttpContext.Session.SetQuestions(QuestionsSessionKey, JsonSerializer.Serialize(triviaQuestions));
         Question = PickRandomQuestion();
     }
