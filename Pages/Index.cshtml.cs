@@ -35,7 +35,6 @@ public class IndexModel : PageModel
             "Tell me about a time when you stepped out of your comfort zone.",
             "What is one thing you appreciate most about your upbringing or family?",
             "What are your thoughts on the meaning of life or the pursuit of happiness?",
-            "What is one thing you've always wanted to learn or try?",
             "Describe a place that holds special meaning to you and why.",
             "What is your favorite type of music, and why does it resonate with you?",
             "If you could invite three people, dead or alive, to a dinner party, who would you choose and why?",
@@ -51,7 +50,6 @@ public class IndexModel : PageModel
             "Describe a time when you overcame a challenge or obstacle and how it shaped you.",
             "What is your favorite form of exercise or physical activity?",
             "If you could have a conversation with any fictional character, who would it be and why?",
-            "Tell me about a goal or dream that you've accomplished and how it made you feel.",
             "What is one thing you appreciate about your current stage in life?",
             "If you could master any skill instantly, what would it be and why?",
             "What is your favorite way to practice self-care or relaxation?",
@@ -74,7 +72,7 @@ public class IndexModel : PageModel
     public string Question { get; set; }
     public void OnGet()
     {
-        HttpContext.Session.SetInt32(QuestionCount, 20);
+        HttpContext.Session.SetInt32(QuestionCount, 12);
         HttpContext.Session.SetQuestions(QuestionsSessionKey, JsonSerializer.Serialize(triviaQuestions));
         Question = PickRandomQuestion();
     }
@@ -103,7 +101,7 @@ public class IndexModel : PageModel
         string randomQuestion = questions[randomIndex];
         questions.RemoveAt(randomIndex);
 
-        questionCount -=1;
+        questionCount -= 1;
         HttpContext.Session.SetInt32(QuestionCount, questionCount);
         HttpContext.Session.SetQuestions(QuestionsSessionKey, JsonSerializer.Serialize(questions));
         return randomQuestion;
